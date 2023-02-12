@@ -5,6 +5,7 @@ import (
 	"golang.org/x/crypto/bcrypt"
 
 	"assignment1GO/models"
+	"assignment1GO/database"
 )
 
 func Register(c *fiber.Ctx) error {
@@ -19,6 +20,8 @@ func Register(c *fiber.Ctx) error {
 		Email:    data["email"],
 		Password: password,
 	}
+
+	database.DB.Create(&user)
 
 	return c.JSON(user)
 }
