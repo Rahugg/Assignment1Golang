@@ -2,21 +2,14 @@ package main
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"gorm.io/driver/postgres"
-	"gorm.io/gorm"
+
+	"assignment1GO/database"
+	"assignment1GO/routes"
 )
 
 func main() {
-	_, err := gorm.Open(postgres.Open("postgres://postgres:12345@localhost:5432/postgres"), &gorm.Config{})
-	if err != nil {
-		panic("Could not connect to the db")
-	}
-
+	database.Connect()
 	app := fiber.New()
-
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello, World 👋!")
-	})
-
+	routes.Setup(app)
 	app.Listen(":8000")
 }
