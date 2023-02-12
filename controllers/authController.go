@@ -15,7 +15,7 @@ import (
 /*
 JWT is created with a secret key and that secret key is private to you
 which means you will never reveal that to the public or inject inside the JWT token.
-When you receive a JWT from the client, you can verify that JWT with this that secret key stored on the server.
+When you receive a JWT from the client, you can verify that JWT with this that secret key stored on the server
 */
 const secretKey = "secret"
 
