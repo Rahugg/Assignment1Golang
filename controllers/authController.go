@@ -92,3 +92,7 @@ func Login(c *fiber.Ctx) error {
 		"message": "success",
 	})
 }
+
+func User(c *fiber.Ctx) error {
+
+}
