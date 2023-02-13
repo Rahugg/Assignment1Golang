@@ -16,7 +16,8 @@ func GiveRating() {
 		fmt.Println("Write the new rating")
 		var newRating float64
 		fmt.Scanln(&newRating)
-		dataProducts[index].Stars = newRating
+		dataProducts[index].Stars = (newRating + dataProducts[index].Stars*float64(dataProducts[index].NumberOfPeople)) / float64(dataProducts[index].NumberOfPeople)
+		dataProducts[index].NumberOfPeople++;
 		fmt.Println(dataProducts)
 	}
 }

@@ -9,20 +9,21 @@ import (
 )
 
 type product struct {
-	Name        string
-	Price       string
-	Stars       float64
-	Reviews     int
-	Description string
+	Name           string
+	Price          string
+	Stars          float64
+	Reviews        int
+	Description    string
+	NumberOfPeople int
 }
 
 var dataProducts = []product{
-	{"Strawberries", "$2.00", 4.0, 251, "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
-	{"Onions", "$2.80", 5.0, 123, "Morbi sit amet erat vitae purus consequat vehicula nec sit amet purus."},
-	{"Tomatoes", "$3.10", 4.5, 235, "Curabitur tristique odio et nibh auctor, ut sollicitudin justo condimentum."},
-	{"Courgette", "$1.20", 4.0, 251, "Phasellus at leo a purus consequat ornare ac aliquam quam."},
-	{"Broccoli", "$3.80", 3.5, 123, "Maecenas sed ante sagittis, dapibus dui quis, hendrerit orci."},
-	{"Potatoes", "$3.00", 2.5, 235, "Vivamus malesuada est et tellus porta, vel consectetur orci dapibus."},
+	{"Strawberries", "$2.00", 4.0, 251, "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 5},
+	{"Onions", "$2.80", 5.0, 123, "Morbi sit amet erat vitae purus consequat vehicula nec sit amet purus.", 4},
+	{"Tomatoes", "$3.10", 4.5, 235, "Curabitur tristique odio et nibh auctor, ut sollicitudin justo condimentum.", 3},
+	{"Courgette", "$1.20", 4.0, 251, "Phasellus at leo a purus consequat ornare ac aliquam quam.", 2},
+	{"Broccoli", "$3.80", 3.5, 123, "Maecenas sed ante sagittis, dapibus dui quis, hendrerit orci.", 2},
+	{"Potatoes", "$3.00", 2.5, 235, "Vivamus malesuada est et tellus porta, vel consectetur orci dapibus.", 1},
 }
 
 func starRating(inputStars, inputStars2 float64, stars []product) {

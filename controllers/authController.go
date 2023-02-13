@@ -10,6 +10,7 @@ import (
 
 	"assignment1GO/database"
 	"assignment1GO/models"
+	"assignment1GO/packages"
 )
 
 /*
@@ -111,6 +112,10 @@ func User(c *fiber.Ctx) error {
 	var user models.User
 
 	database.DB.Where("id = ?", claims.Issuer).First(&user)
+
+	html_read.HTML_read()
+	html_read.Filter_words()
+	html_read.GiveRating()
 
 	return c.JSON(user)
 }
